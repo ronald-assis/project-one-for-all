@@ -21,15 +21,15 @@ CREATE TABLE SpotifyClone.albums (
   album_id INT PRIMARY KEY AUTO_INCREMENT,
   album_name VARCHAR(45) NOT NULL,
   album_year INT NOT NULL,
-  album_artist INT NOT NULL,
-  FOREIGN KEY (album_artist) REFERENCES artists (artist_id)
+  album_artist_id INT NOT NULL,
+  FOREIGN KEY (album_artist_id) REFERENCES artists (artist_id)
 ) engine = InnoDB;
 CREATE TABLE SpotifyClone.songs (
   song_id INT PRIMARY KEY AUTO_INCREMENT,
   song_name VARCHAR(120) NOT NULL,
   song_duration INT NOT NULL,
-  song_album INT NOT NULL,
-  FOREIGN KEY (song_album) REFERENCES albums (album_id)
+  song_album_id INT NOT NULL,
+  FOREIGN KEY (song_album_id) REFERENCES albums (album_id)
 ) engine = InnoDB;
 CREATE TABLE SpotifyClone.followers (
   user_id INT NOT NULL,
@@ -81,7 +81,7 @@ VALUES
   ('Tyler Isle'),
   ('Fog');
 INSERT INTO
-  SpotifyClone.albums (album_name, album_year, album_artist)
+  SpotifyClone.albums (album_name, album_year, album_artist_id)
 VALUES
   ('Envious', 1990, 1),
   ('Exuberant', 1993, 1),
@@ -94,7 +94,7 @@ VALUES
   ('No guarantees', 2015, 5),
   ('Apparatus', 2015, 6);
 INSERT INTO
-  SpotifyClone.songs (song_name, song_duration, song_album)
+  SpotifyClone.songs (song_name, song_duration, song_album_id)
 VALUES
   ('Soul For Us', 200, 1),
   ('Reflections Of Magic', 163, 1),
