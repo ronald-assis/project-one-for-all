@@ -3,7 +3,7 @@ CREATE DATABASE SpotifyClone;
 CREATE TABLE SpotifyClone.payment_plans (
   plan_id INT PRIMARY KEY AUTO_INCREMENT,
   plan_name VARCHAR(45) NOT NULL,
-  plan_price FLOAT(2)
+  plan_price DECIMAL(3, 2)
 ) engine = InnoDB;
 CREATE TABLE SpotifyClone.users (
   user_id INT PRIMARY KEY AUTO_INCREMENT,
